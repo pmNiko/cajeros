@@ -28,7 +28,7 @@ categorias = {
     "categoria 1": 250,
     "categoria 2": 380,
     "categoria 3": 490,
-    "categoria 1": 250
+    "categoria 4": 600
 }
 
 cajeros = {}
@@ -51,7 +51,9 @@ while bandera:
     opcion = int(input("Ingrese una opcion: "))
 
     if opcion == 1:
-        pass
+        nombre = input("Ingrese el nombre del cajero: ")
+        cajeros[nombre] = "categoria 1"
+        print(cajeros)
     elif opcion == 2:
         pass
     elif opcion == 3:
@@ -61,6 +63,7 @@ while bandera:
     elif opcion == 5:
         pass
     elif opcion == 6:
+        print("Saliendo del sistema.")
         bandera = False
     else:
         print("Opcion invalida.")
