@@ -33,7 +33,7 @@ categorias = {
 
 cajeros = {}
 
-menu = """ 
+menu = """
       Menu
   1- Dar de alta un cajero
   2- Cambiar categoria de un cajero
@@ -44,3 +44,23 @@ menu = """
 """
 
 print(menu)
+
+bandera = True
+
+while bandera:
+    opcion = int(input("Ingrese una opcion: "))
+
+    if opcion == 1:
+        pass
+    elif opcion == 2:
+        pass
+    elif opcion == 3:
+        pass
+    elif opcion == 4:
+        pass
+    elif opcion == 5:
+        pass
+    elif opcion == 6:
+        bandera = False
+    else:
+        print("Opcion invalida.")
