@@ -31,7 +31,7 @@ categorias = {
     "categoria 4": 600
 }
 
-cajeros = {}
+cajeros = {"tomas": "categoria 1", "carlos": "categoria 1"}
 
 menu = """
       Menu
@@ -50,12 +50,42 @@ bandera = True
 while bandera:
     opcion = int(input("Ingrese una opcion: "))
 
+    #opcion para dar de alta un cajero
     if opcion == 1:
         nombre = input("Ingrese el nombre del cajero: ")
         cajeros[nombre] = "categoria 1"
         print(cajeros)
+
+    #opcion cambiar categoria
     elif opcion == 2:
-        pass
+        cajero_a_cambiar = input("ingresar nombre del cajero: ")
+        print("seleccione la categoria ")
+
+        i = 1
+        for key in categorias:
+            print(f"\t{i}- {key}")
+            i += 1
+        cat = int(input("ingresar categoria: "))
+        
+        # cat_list = list(categorias)
+        # categoria_asignar = cat_list[cat-1]
+
+        # cajeros[cajero_a_cambiar] = categoria_asignar
+
+        if cat == 1:
+            cajeros[cajero_a_cambiar] = "categoria 1"
+        elif cat == 2:
+            cajeros[cajero_a_cambiar] = "categoria 2"
+        elif cat == 3:
+            cajeros[cajero_a_cambiar] = "categoria 3"
+        elif cat == 4:
+            cajeros[cajero_a_cambiar] = "categoria 4"
+        else:
+            print("categoria incorrecta")
+
+        print(cajeros)
+
+        
     elif opcion == 3:
         pass
     elif opcion == 4:
