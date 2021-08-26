@@ -66,24 +66,30 @@ while bandera:
             print(f"\t{i}- {key}")
             i += 1
         cat = int(input("ingresar categoria: "))
+        if cat > 0 and cat <= len(categorias):          
         
-        # cat_list = list(categorias)
-        # categoria_asignar = cat_list[cat-1]
+            cat_list = list(categorias)
+            print(cat_list)
+            categoria_asignar = cat_list[cat-1]
+            print(categoria_asignar)
 
-        # cajeros[cajero_a_cambiar] = categoria_asignar
-
-        if cat == 1:
-            cajeros[cajero_a_cambiar] = "categoria 1"
-        elif cat == 2:
-            cajeros[cajero_a_cambiar] = "categoria 2"
-        elif cat == 3:
-            cajeros[cajero_a_cambiar] = "categoria 3"
-        elif cat == 4:
-            cajeros[cajero_a_cambiar] = "categoria 4"
+            cajeros[cajero_a_cambiar] = categoria_asignar
+            print(cajeros)
         else:
-            print("categoria incorrecta")
+            print('opcion incorrecta')
 
-        print(cajeros)
+        # if cat == 1:
+        #     cajeros[cajero_a_cambiar] = "categoria 1"
+        # elif cat == 2:
+        #     cajeros[cajero_a_cambiar] = "categoria 2"
+        # elif cat == 3:
+        #     cajeros[cajero_a_cambiar] = "categoria 3"
+        # elif cat == 4:
+        #     cajeros[cajero_a_cambiar] = "categoria 4"
+        # else:
+        #     print("categoria incorrecta")
+
+        
 
         
     elif opcion == 3:
