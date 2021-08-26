@@ -31,7 +31,7 @@ categorias = {
     "categoria 4": 600
 }
 
-cajeros = {"tomas": "categoria 1", "carlos": "categoria 1"}
+cajeros = {"tomas": "categoria 1", "carlos": "categoria 2", "alex": "categoria 4"}
 
 menu = """
       Menu
@@ -78,16 +78,7 @@ while bandera:
         else:
             print('opcion incorrecta')
 
-        # if cat == 1:
-        #     cajeros[cajero_a_cambiar] = "categoria 1"
-        # elif cat == 2:
-        #     cajeros[cajero_a_cambiar] = "categoria 2"
-        # elif cat == 3:
-        #     cajeros[cajero_a_cambiar] = "categoria 3"
-        # elif cat == 4:
-        #     cajeros[cajero_a_cambiar] = "categoria 4"
-        # else:
-        #     print("categoria incorrecta")
+       
 
         
 
@@ -100,7 +91,13 @@ while bandera:
         print(cajeros)
         
     elif opcion == 4:
-        pass
+        horas_trabajadas = 60
+        print("\tNombre de cajero \tSueldo a cobrar")
+        for nombre, categoria in cajeros.items():
+            valor_hora = categorias[categoria]
+            sueldo_a_pagar = valor_hora * horas_trabajadas
+            print(f"\t{nombre.capitalize()} \t\t\t$ {sueldo_a_pagar}")
+        
     elif opcion == 5:
         pass
     elif opcion == 6:
