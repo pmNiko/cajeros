@@ -93,7 +93,12 @@ while bandera:
 
         
     elif opcion == 3:
-        pass
+        cajero_a_eliminar = input("ingresar nombre del cajero a eliminar: ")
+        elemento = cajeros.pop(cajero_a_eliminar, "no existe")
+        if elemento == "no existe":
+            print("el cajero seleccionado no existe.")
+        print(cajeros)
+        
     elif opcion == 4:
         pass
     elif opcion == 5:
