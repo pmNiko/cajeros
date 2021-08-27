@@ -1,1 +1,3 @@
-### Ejercicio de cajeros
+## Ejercicio de cajeros
+
+### trabajando con colecciones
