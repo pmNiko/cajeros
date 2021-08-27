@@ -76,20 +76,16 @@ while bandera:
             cajeros[cajero_a_cambiar] = categoria_asignar
             print(cajeros)
         else:
-            print('opcion incorrecta')
+            print('opcion incorrecta')       
 
-       
-
-        
-
-        
+    # ELIMINAR CAJERO.   
     elif opcion == 3:
         cajero_a_eliminar = input("ingresar nombre del cajero a eliminar: ")
         elemento = cajeros.pop(cajero_a_eliminar, "no existe")
         if elemento == "no existe":
             print("el cajero seleccionado no existe.")
         print(cajeros)
-        
+    # CALCULO DE PAGO    
     elif opcion == 4:
         horas_trabajadas = 60
         print("\tNombre de cajero \tSueldo a cobrar")
@@ -97,9 +93,16 @@ while bandera:
             valor_hora = categorias[categoria]
             sueldo_a_pagar = valor_hora * horas_trabajadas
             print(f"\t{nombre.capitalize()} \t\t\t$ {sueldo_a_pagar}")
-        
+    # SUBA DE PROCENTAJE    
     elif opcion == 5:
-        pass
+        porcentaje = int(input('ingrese el porcentaje: '))
+        for key in categorias:
+            valor_hora_1 = categorias[key] 
+            valor = (valor_hora_1 * porcentaje) / 100
+            nuevo_valor = valor_hora_1 + valor
+            categorias[key] = nuevo_valor
+        print(categorias)    
+    # OPCION SALIR
     elif opcion == 6:
         print("Saliendo del sistema.")
         bandera = False
