@@ -24,6 +24,9 @@
 
 # Implementar funciones en un archivo a parte para luego importarlas y hacer uso en cada opción según corresponda.
 
+'''importancion de modulos'''
+from funciones import cambiarCategoria
+
 categorias = {
     "categoria 1": 250,
     "categoria 2": 380,
@@ -58,25 +61,7 @@ while bandera:
 
     #opcion cambiar categoria
     elif opcion == 2:
-        cajero_a_cambiar = input("ingresar nombre del cajero: ")
-        print("seleccione la categoria ")
-
-        i = 1
-        for key in categorias:
-            print(f"\t{i}- {key}")
-            i += 1
-        cat = int(input("ingresar categoria: "))
-        if cat > 0 and cat <= len(categorias):          
-        
-            cat_list = list(categorias)
-            print(cat_list)
-            categoria_asignar = cat_list[cat-1]
-            print(categoria_asignar)
-
-            cajeros[cajero_a_cambiar] = categoria_asignar
-            print(cajeros)
-        else:
-            print('opcion incorrecta')       
+        cambiarCategoria(categorias, cajeros)       
 
     # ELIMINAR CAJERO.   
     elif opcion == 3:
