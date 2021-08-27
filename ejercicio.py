@@ -26,7 +26,7 @@
 
 
 
-from funciones import calculoDePagos
+from funciones import calculoDePagos, subaPorcentaje
 
 
 categorias = {
@@ -95,13 +95,7 @@ while bandera:
         calculoDePagos(cajeros, categorias)
     # SUBA DE PROCENTAJE    
     elif opcion == 5:
-        porcentaje = int(input('ingrese el porcentaje: '))
-        for key in categorias:
-            valor_hora_1 = categorias[key] 
-            valor = (valor_hora_1 * porcentaje) / 100
-            nuevo_valor = valor_hora_1 + valor
-            categorias[key] = nuevo_valor
-        print(categorias)    
+         subaPorcentaje(categorias)  
     # OPCION SALIR
     elif opcion == 6:
         print("Saliendo del sistema.")
