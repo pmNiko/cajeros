@@ -24,6 +24,9 @@
 
 # Implementar funciones en un archivo a parte para luego importarlas y hacer uso en cada opción según corresponda.
 
+""" importacion de modulos """
+from funciones import altaCajero
+
 categorias = {
     "categoria 1": 250,
     "categoria 2": 380,
@@ -52,9 +55,7 @@ while bandera:
 
     #opcion para dar de alta un cajero
     if opcion == 1:
-        nombre = input("Ingrese el nombre del cajero: ")
-        cajeros[nombre] = "categoria 1"
-        print(cajeros)
+        altaCajero(cajeros)   
 
     #opcion cambiar categoria
     elif opcion == 2:
