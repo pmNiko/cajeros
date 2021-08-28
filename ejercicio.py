@@ -25,8 +25,13 @@
 # Implementar funciones en un archivo a parte para luego importarlas y hacer uso en cada opción según corresponda.
 
 
+
+
+
+
 '''importancion de modulos'''
-from funciones import cambiarCategoria, altaCajero, eliminarCajero
+from funciones import cambiarCategoria, altaCajero, eliminarCajero, calculoDePagos, subaPorcentaje
+
 
 
 categorias = {
@@ -55,34 +60,26 @@ bandera = True
 while bandera:
     opcion = int(input("Ingrese una opcion: "))
 
-    #opcion para dar de alta un cajero
+    # ALTA DE CAJERO
     if opcion == 1:
         altaCajero(cajeros)   
 
-    #opcion cambiar categoria
+    # OPCION CAMBIAR CATEGORIA
     elif opcion == 2:
         cambiarCategoria(categorias, cajeros)       
 
     # ELIMINAR CAJERO.   
     elif opcion == 3:
-        eliminarCajero()
+        eliminarCajero(cajeros)
+        
     # CALCULO DE PAGO    
     elif opcion == 4:
-        horas_trabajadas = 60
-        print("\tNombre de cajero \tSueldo a cobrar")
-        for nombre, categoria in cajeros.items():
-            valor_hora = categorias[categoria]
-            sueldo_a_pagar = valor_hora * horas_trabajadas
-            print(f"\t{nombre.capitalize()} \t\t\t$ {sueldo_a_pagar}")
+        calculoDePagos(cajeros, categorias)
+        
     # SUBA DE PROCENTAJE    
     elif opcion == 5:
-        porcentaje = int(input('ingrese el porcentaje: '))
-        for key in categorias:
-            valor_hora_1 = categorias[key] 
-            valor = (valor_hora_1 * porcentaje) / 100
-            nuevo_valor = valor_hora_1 + valor
-            categorias[key] = nuevo_valor
-        print(categorias)    
+         subaPorcentaje(categorias)
+           
     # OPCION SALIR
     elif opcion == 6:
         print("Saliendo del sistema.")
