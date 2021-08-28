@@ -26,7 +26,12 @@
 
 
 
-from funciones import calculoDePagos, subaPorcentaje
+
+
+
+'''importancion de modulos'''
+from funciones import cambiarCategoria, altaCajero, eliminarCajero, calculoDePagos, subaPorcentaje
+
 
 
 categorias = {
@@ -55,47 +60,26 @@ bandera = True
 while bandera:
     opcion = int(input("Ingrese una opcion: "))
 
-    #opcion para dar de alta un cajero
+    # ALTA DE CAJERO
     if opcion == 1:
-        nombre = input("Ingrese el nombre del cajero: ")
-        cajeros[nombre] = "categoria 1"
-        print(cajeros)
+        altaCajero(cajeros)   
 
-    #opcion cambiar categoria
+    # OPCION CAMBIAR CATEGORIA
     elif opcion == 2:
-        cajero_a_cambiar = input("ingresar nombre del cajero: ")
-        print("seleccione la categoria ")
-
-        i = 1
-        for key in categorias:
-            print(f"\t{i}- {key}")
-            i += 1
-        cat = int(input("ingresar categoria: "))
-        if cat > 0 and cat <= len(categorias):          
-        
-            cat_list = list(categorias)
-            print(cat_list)
-            categoria_asignar = cat_list[cat-1]
-            print(categoria_asignar)
-
-            cajeros[cajero_a_cambiar] = categoria_asignar
-            print(cajeros)
-        else:
-            print('opcion incorrecta')       
+        cambiarCategoria(categorias, cajeros)       
 
     # ELIMINAR CAJERO.   
     elif opcion == 3:
-        cajero_a_eliminar = input("ingresar nombre del cajero a eliminar: ")
-        elemento = cajeros.pop(cajero_a_eliminar, "no existe")
-        if elemento == "no existe":
-            print("el cajero seleccionado no existe.")
-        print(cajeros)
+        eliminarCajero(cajeros)
+        
     # CALCULO DE PAGO    
     elif opcion == 4:
         calculoDePagos(cajeros, categorias)
+        
     # SUBA DE PROCENTAJE    
     elif opcion == 5:
-         subaPorcentaje(categorias)  
+         subaPorcentaje(categorias)
+           
     # OPCION SALIR
     elif opcion == 6:
         print("Saliendo del sistema.")
