@@ -24,6 +24,11 @@
 
 # Implementar funciones en un archivo a parte para luego importarlas y hacer uso en cada opción según corresponda.
 
+""" importacion de modulos """
+
+from funciones import altaCajero, eliminarCajero
+
+
 categorias = {
     "categoria 1": 250,
     "categoria 2": 380,
@@ -52,9 +57,7 @@ while bandera:
 
     #opcion para dar de alta un cajero
     if opcion == 1:
-        nombre = input("Ingrese el nombre del cajero: ")
-        cajeros[nombre] = "categoria 1"
-        print(cajeros)
+        altaCajero(cajeros)   
 
     #opcion cambiar categoria
     elif opcion == 2:
@@ -80,11 +83,7 @@ while bandera:
 
     # ELIMINAR CAJERO.   
     elif opcion == 3:
-        cajero_a_eliminar = input("ingresar nombre del cajero a eliminar: ")
-        elemento = cajeros.pop(cajero_a_eliminar, "no existe")
-        if elemento == "no existe":
-            print("el cajero seleccionado no existe.")
-        print(cajeros)
+        eliminarCajero()
     # CALCULO DE PAGO    
     elif opcion == 4:
         horas_trabajadas = 60
