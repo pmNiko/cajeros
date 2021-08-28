@@ -24,16 +24,11 @@
 
 # Implementar funciones en un archivo a parte para luego importarlas y hacer uso en cada opción según corresponda.
 
-
-
-
-
-
 '''importancion de modulos'''
 from funciones import cambiarCategoria, altaCajero, eliminarCajero, calculoDePagos, subaPorcentaje
 
 
-
+# Coleccion de categorias
 categorias = {
     "categoria 1": 250,
     "categoria 2": 380,
@@ -41,8 +36,10 @@ categorias = {
     "categoria 4": 600
 }
 
+# Coleccion de cajeros
 cajeros = {"tomas": "categoria 1", "carlos": "categoria 2", "alex": "categoria 4"}
 
+# Opciones del menu
 menu = """
       Menu
   1- Dar de alta un cajero
@@ -55,34 +52,39 @@ menu = """
 
 print(menu)
 
+# Bandera de corte del bucle while
 bandera = True
-
+# Bucle de iteracion while
 while bandera:
+    
+    # Seleccion de opcion 
     opcion = int(input("Ingrese una opcion: "))
 
-    # ALTA DE CAJERO
+    # Alta de cajero
     if opcion == 1:
         altaCajero(cajeros)   
 
-    # OPCION CAMBIAR CATEGORIA
+    # Cambiar categoria
     elif opcion == 2:
         cambiarCategoria(categorias, cajeros)       
 
-    # ELIMINAR CAJERO.   
+    # Eliminar cajero  
     elif opcion == 3:
         eliminarCajero(cajeros)
         
-    # CALCULO DE PAGO    
+    # Calculo de pagos   
     elif opcion == 4:
         calculoDePagos(cajeros, categorias)
         
-    # SUBA DE PROCENTAJE    
+    # Suba de porcentaje   
     elif opcion == 5:
          subaPorcentaje(categorias)
            
-    # OPCION SALIR
+    # Opcion de fin del bucle
     elif opcion == 6:
         print("Saliendo del sistema.")
         bandera = False
+        
+    # Opcion no contenida por nuestro menu
     else:
         print("Opcion invalida.")

@@ -1,5 +1,7 @@
 
-""" funcion calculo de pago """
+""" Funcion del menu """
+
+#  Funcion calculo de pagos
 def calculoDePagos(cajeros, categorias):
     horas_trabajadas = 60
     print("\tNombre de cajero \tSueldo a cobrar")
@@ -8,7 +10,8 @@ def calculoDePagos(cajeros, categorias):
         sueldo_a_pagar = valor_hora * horas_trabajadas
         print(f"\t{nombre.capitalize()} \t\t\t$ {sueldo_a_pagar}")
         
-        
+
+# Funcion de suba de porcentajes
 def subaPorcentaje(categorias):
     porcentaje = int(input('ingrese el porcentaje: '))
     for key in categorias:
@@ -19,8 +22,7 @@ def subaPorcentaje(categorias):
     print(categorias) 
 
 
-'''funcion cambiar categoria'''
-
+# Funcion para cambiar la categoria de un cajero
 def cambiarCategoria(categorias1, cajeros1):
     cajero_a_cambiar = input("ingresar nombre del cajero: ")
     print("seleccione la categoria ")
@@ -43,8 +45,7 @@ def cambiarCategoria(categorias1, cajeros1):
         print('opcion incorrecta')
 
 
-""" funcion para dar de alta un cajero """
-
+# Funcion para dar de alta un nuevo cajero
 def altaCajero(coleccion_cajeros): 
 
     nombre = input("Ingrese el nombre del cajero: ")
@@ -52,8 +53,7 @@ def altaCajero(coleccion_cajeros):
     print(coleccion_cajeros)
     
 
-""" Fn eliminar cajero """
-
+# Funcion para eliminar un cajero
 def eliminarCajero(coleccion_cajeros):
     cajero_a_eliminar = input("ingresar nombre del cajero a eliminar: ")
     elemento = coleccion_cajeros.pop(cajero_a_eliminar, "no existe")
